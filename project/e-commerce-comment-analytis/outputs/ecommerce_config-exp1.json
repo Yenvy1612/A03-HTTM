@@ -1,0 +1,15 @@
+{
+  "experiment": "exp1",
+  "description": "Baseline: 2,000 most frequent TF-IDF terms; MLP 128-64.",
+  "feature_selection": false,
+  "input_features": [
+    "Review Text"
+  ],
+  "vocabulary_size": 2000,
+  "selected_feature_count": 2000,
+  "learning_rate": 0.01,
+  "epochs": 25,
+  "batch_size": 256,
+  "accuracy": 0.7704532077692761,
+  "macro_f1": 0.29011524822695034
+}

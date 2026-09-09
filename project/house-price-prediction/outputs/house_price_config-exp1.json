@@ -1,0 +1,26 @@
+{
+  "experiment": "exp1",
+  "description": "Baseline: all engineered numeric and categorical features; MLP 64-32.",
+  "numeric_features": [
+    "carpet_sqft",
+    "Bathroom",
+    "Balcony",
+    "floor_num",
+    "total_floors"
+  ],
+  "categorical_features": [
+    "Status",
+    "Transaction",
+    "Furnishing",
+    "facing",
+    "Ownership",
+    "location"
+  ],
+  "feature_selection": false,
+  "learning_rate": 0.001,
+  "epochs": 25,
+  "batch_size": 1024,
+  "test_mae": 4446476.5,
+  "test_rmse": 10787093.0,
+  "test_r2": 0.4625837206840515
+}

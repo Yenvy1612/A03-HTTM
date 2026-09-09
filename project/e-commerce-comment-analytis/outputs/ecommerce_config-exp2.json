@@ -1,0 +1,15 @@
+{
+  "experiment": "exp2",
+  "description": "Representation/capacity experiment: 3,000 TF-IDF terms; wider MLP 160-64 and adjusted optimization.",
+  "feature_selection": false,
+  "input_features": [
+    "Review Text"
+  ],
+  "vocabulary_size": 3000,
+  "selected_feature_count": 3000,
+  "learning_rate": 0.03,
+  "epochs": 30,
+  "batch_size": 192,
+  "accuracy": 0.8113596233078282,
+  "macro_f1": 0.5276903321167428
+}

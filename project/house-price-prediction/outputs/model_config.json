@@ -1,0 +1,25 @@
+{
+  "experiment": "ml_baseline",
+  "task": "regression",
+  "target": "Price (in rupees)",
+  "features": [
+    "Carpet Area Numeric",
+    "Bathroom Numeric",
+    "Balcony Numeric",
+    "BHK",
+    "location",
+    "Status",
+    "Transaction",
+    "Furnishing",
+    "facing",
+    "Ownership"
+  ],
+  "models": [
+    "Linear Regression",
+    "Decision Tree Regressor",
+    "Random Forest Regressor"
+  ],
+  "best_metric": "RMSE",
+  "best_model": "Linear Regression",
+  "random_state": 42
+}

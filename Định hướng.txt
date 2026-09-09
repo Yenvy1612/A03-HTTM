@@ -1,0 +1,41 @@
+D:\Nam_4\ki_1\HTTM\Assign_03\project\e-commerce-comment-analytis>tree /f
+
+Folder PATH listing for volume học tập
+
+Volume serial number is 000000F7 C62B:5564
+
+D:.
+
+├───data
+
+│       Womens Clothing E-Commerce Reviews.csv
+
+│
+
+├───figures
+
+├───models
+
+└───outputs
+
+D:\Nam_4\ki_1\HTTM\Assign_03\project\house-price-prediction>Tree /f
+
+Folder PATH listing for volume học tập
+
+Volume serial number is 000000E9 C62B:5564
+
+D:.
+
+├───data
+
+│       house_prices.csv
+
+│
+
+├───figures
+
+├───models
+
+└───outputs
+
+#

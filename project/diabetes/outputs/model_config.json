@@ -1,0 +1,36 @@
+{
+  "experiment": "ml_baseline",
+  "task": "binary_classification",
+  "target": "Diabetes_binary",
+  "features": [
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "BMI",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "Fruits",
+    "Veggies",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk",
+    "Sex",
+    "Age",
+    "Education",
+    "Income"
+  ],
+  "models": [
+    "Logistic Regression",
+    "Decision Tree",
+    "Random Forest"
+  ],
+  "best_metric": "F1",
+  "best_model": "Random Forest",
+  "random_state": 42
+}

@@ -1,0 +1,24 @@
+{
+  "experiment": "exp3",
+  "description": "Feature-selection experiment: select numeric features by train-only correlation and categorical features by train-only quality rules; compact MLP 48-24.",
+  "numeric_features": [
+    "Bathroom",
+    "Balcony",
+    "total_floors"
+  ],
+  "categorical_features": [
+    "Status",
+    "Transaction",
+    "Furnishing",
+    "facing",
+    "Ownership",
+    "location"
+  ],
+  "feature_selection": true,
+  "learning_rate": 0.002,
+  "epochs": 35,
+  "batch_size": 1024,
+  "test_mae": 4091003.25,
+  "test_rmse": 9871748.0,
+  "test_r2": 0.549919605255127
+}

@@ -1,0 +1,24 @@
+{
+  "experiment": "ml_baseline",
+  "task": "multiclass_text_classification",
+  "target": "sentiment",
+  "target_definition": {
+    "1-2": "Negative",
+    "3": "Neutral",
+    "4-5": "Positive"
+  },
+  "features": [
+    "Review Text"
+  ],
+  "excluded_to_prevent_leakage": [
+    "Rating"
+  ],
+  "models": [
+    "Logistic Regression",
+    "Decision Tree",
+    "Random Forest"
+  ],
+  "best_metric": "Macro F1",
+  "best_model": "Logistic Regression",
+  "random_state": 42
+}

@@ -1,0 +1,4 @@
+Class,Precision,Recall,F1
+Negative,0.0,0.0,0.0
+Neutral,0.0,0.0,0.0
+Positive,0.7704532077692761,1.0,0.870345744680851

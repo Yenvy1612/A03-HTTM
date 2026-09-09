@@ -1,0 +1,26 @@
+{
+  "experiment": "exp2",
+  "description": "Capacity experiment: all features; wider MLP 96-48, larger learning rate and smaller batch.",
+  "numeric_features": [
+    "carpet_sqft",
+    "Bathroom",
+    "Balcony",
+    "floor_num",
+    "total_floors"
+  ],
+  "categorical_features": [
+    "Status",
+    "Transaction",
+    "Furnishing",
+    "facing",
+    "Ownership",
+    "location"
+  ],
+  "feature_selection": false,
+  "learning_rate": 0.003,
+  "epochs": 35,
+  "batch_size": 512,
+  "test_mae": 3212898.5,
+  "test_rmse": 9298298.0,
+  "test_r2": 0.6006912291049957
+}

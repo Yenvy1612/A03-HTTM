@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web demo dự đoán Diabetes, House Price và cảm xúc E-commerce.">
+  <title>ML Lab — Prediction Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">ML</span>
+        <div><strong>Prediction Lab</strong><span>Assignment 03</span></div>
+      </div>
+      <div class="system-state"><span></span> 3 models sẵn sàng</div>
+    </header>
+
+    <main>
+      <section class="intro">
+        <p class="eyebrow">MODEL WORKBENCH</p>
+        <h1>Chọn bài toán.<br><em>Thử dự đoán.</em></h1>
+        <p>Ba pipeline tốt nhất từ các notebook, đưa vào một giao diện để kiểm tra dữ liệu mới.</p>
+      </section>
+
+      <nav class="tabs" aria-label="Chọn bài toán" role="tablist">
+        <button class="tab active" role="tab" aria-selected="true" aria-controls="diabetes-panel" data-target="diabetes-panel"><span>01</span> Diabetes</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="house-panel" data-target="house-panel"><span>02</span> House Price</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="sentiment-panel" data-target="sentiment-panel"><span>03</span> E-commerce</button>
+      </nav>
+
+      <section id="diabetes-panel" class="panel active" role="tabpanel">
+        <div class="panel-heading">
+          <div><p class="kicker">BINARY CLASSIFICATION</p><h2>Đánh giá nguy cơ tiểu đường</h2></div>
+          <span class="model-chip">Random Forest · F1 0,7567</span>
+        </div>
+        <form id="diabetes-form">
+          <div class="form-section">
+            <h3>Chỉ số chính</h3>
+            <div class="field-grid four">
+              <label>BMI<input name="BMI" type="number" min="10" max="100" step="0.1" value="28"></label>
+              <label>Sức khỏe chung<select name="GenHlth"><option value="1">1 — Rất tốt</option><option value="2">2 — Tốt</option><option value="3" selected>3 — Trung bình</option><option value="4">4 — Kém</option><option value="5">5 — Rất kém</option></select></label>
+              <label>Nhóm tuổi<select name="Age"><option value="1">18–24</option><option value="4">35–39</option><option value="7">50–54</option><option value="9" selected>60–64</option><option value="11">70–74</option><option value="13">80+</option></select></label>
+              <label>Thu nhập (1–8)<input name="Income" type="number" min="1" max="8" value="6"></label>
+              <label>Số ngày tinh thần kém<input name="MentHlth" type="number" min="0" max="30" value="0"></label>
+              <label>Số ngày thể chất kém<input name="PhysHlth" type="number" min="0" max="30" value="2"></label>
+              <label>Học vấn (1–6)<input name="Education" type="number" min="1" max="6" value="5"></label>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3>Tiền sử và lối sống</h3>
+            <div class="toggle-grid" id="diabetes-toggles"></div>
+          </div>
+          <button class="primary" type="submit">Phân tích nguy cơ <span>→</span></button>
+        </form>
+        <div class="result" id="diabetes-result" aria-live="polite" hidden></div>
+      </section>
+
+      <section id="house-panel" class="panel" role="tabpanel" hidden>
+        <div class="panel-heading">
+          <div><p class="kicker">REGRESSION</p><h2>Ước tính giá bất động sản</h2></div>
+          <span class="model-chip">Linear Regression · RMSE 3.910,86</span>
+        </div>
+        <form id="house-form">
+          <div class="field-grid three">
+            <label>Diện tích sử dụng (sqft)<input name="Carpet Area Numeric" type="number" min="1" value="950" required></label>
+            <label>Số phòng ngủ (BHK)<input name="BHK" type="number" min="1" value="2" required></label>
+            <label>Phòng tắm<input name="Bathroom" type="number" min="0" value="2" required></label>
+            <label>Ban công<input name="Balcony" type="number" min="0" value="1" required></label>
+            <label>Địa điểm<input name="location" value="mumbai" placeholder="Ví dụ: mumbai" required></label>
+            <label>Tình trạng<select name="Status"><option>Ready to Move</option></select></label>
+            <label>Giao dịch<select name="Transaction"><option>Resale</option><option>New Property</option></select></label>
+            <label>Nội thất<select name="Furnishing"><option>Unfurnished</option><option>Semi-Furnished</option><option>Furnished</option></select></label>
+            <label>Hướng<select name="facing"><option>East</option><option>West</option><option>North</option><option>South</option></select></label>
+            <label>Sở hữu<select name="Ownership"><option>Freehold</option><option>Leasehold</option><option>Co-operative Society</option></select></label>
+          </div>
+          <button class="primary" type="submit">Ước tính giá <span>→</span></button>
+        </form>
+        <div class="result" id="house-result" aria-live="polite" hidden></div>
+      </section>
+
+      <section id="sentiment-panel" class="panel" role="tabpanel" hidden>
+        <div class="panel-heading">
+          <div><p class="kicker">MULTICLASS NLP</p><h2>Phân tích cảm xúc đánh giá</h2></div>
+          <span class="model-chip">Logistic + TF-IDF · Macro F1 0,6213</span>
+        </div>
+        <form id="sentiment-form">
+          <label class="review-field">Nội dung đánh giá<textarea name="review" rows="7" minlength="3" required>I love this dress. The fabric is comfortable and it fits perfectly!</textarea><small>Model nhận văn bản tiếng Anh giống dataset huấn luyện.</small></label>
+          <div class="examples">
+            <span>Thử nhanh:</span>
+            <button type="button" data-review="Beautiful fit and excellent quality. I absolutely love it!">Tích cực</button>
+            <button type="button" data-review="It is okay, but the material is just average.">Trung lập</button>
+            <button type="button" data-review="Terrible fit and poor quality. I had to return it.">Tiêu cực</button>
+          </div>
+          <button class="primary" type="submit">Phân tích cảm xúc <span>→</span></button>
+        </form>
+        <div class="result" id="sentiment-result" aria-live="polite" hidden></div>
+      </section>
+    </main>
+
+    <footer><span>Assignment 03 · Machine Learning Systems</span><span>Dữ liệu dự đoán không được lưu</span></footer>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
